@@ -11,14 +11,14 @@ import java.util.ArrayList;
  * @author azuck
  */
 public class Stadium {
-    private int numSeats;
-    private ArrayList<String> section;
-    private String seatCategory;
-    private ArrayList<Integer> seatAvailability;
-    private ArrayList<String> schedule;
+    public int numSeats;
+    public ArrayList<String> section;
+    public String seatCategory;
+    public ArrayList<Integer> seatAvailability;
+    public ArrayList<String> schedule;
     
-public Stadium () {
-    this.numSeats = 32;
+public Stadium(Integer _numSeats) {
+    this.numSeats = _numSeats;
     this.schedule = new ArrayList<String>();
     this.section = new ArrayList<String>();
     
