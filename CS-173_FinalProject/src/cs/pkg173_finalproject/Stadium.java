@@ -14,7 +14,7 @@ public class Stadium {
     public int numSeats; // Number of seats bought
     public ArrayList<String> section; // Seat level (e.g. nosbleeds, etc.) 
     public ArrayList<String> schedule;
-    public String stadiumName;
+    public String stadiumName; //
     public int totalSeats; // Max number of seats available 
     public ArrayList<Integer> seatsPerGame;
     public ArrayList<Integer> pricePerSection;
@@ -37,10 +37,6 @@ public Stadium(Integer _totalSeats, String _stadiumName) {
         return numSeats;
     }
 
-    /**
-     * @param numSeats the numSeats to set
-     */
-    
     /**
      * @return the section
      */
