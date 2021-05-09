@@ -11,16 +11,22 @@ import java.util.ArrayList;
  * @author azuck
  */
 public class Stadium {
-    public int numSeats;
-    public ArrayList<String> section;
-    public String seatCategory;
-    public ArrayList<Integer> seatAvailability;
+    public int numSeats; // Number of seats bought
+    public ArrayList<String> section; // Seat level (e.g. nosbleeds, etc.) 
     public ArrayList<String> schedule;
+    public String stadiumName;
+    public int totalSeats; // Max number of seats available 
+    public ArrayList<Integer> seatsPerGame;
+    public ArrayList<Integer> pricePerSection;
     
-public Stadium(Integer _numSeats) {
-    this.numSeats = _numSeats;
+public Stadium(Integer _totalSeats, String _stadiumName) {
+    this.totalSeats = _totalSeats;
+    this.numSeats = _totalSeats;
     this.schedule = new ArrayList<String>();
     this.section = new ArrayList<String>();
+    this.stadiumName = _stadiumName;
+    this.seatsPerGame = new ArrayList<Integer>();
+    
     
 }
 
@@ -34,10 +40,7 @@ public Stadium(Integer _numSeats) {
     /**
      * @param numSeats the numSeats to set
      */
-    public void setNumSeats(int numSeats) {
-        this.numSeats = numSeats;
-    }
-
+    
     /**
      * @return the section
      */
@@ -52,33 +55,6 @@ public Stadium(Integer _numSeats) {
         this.section = section;
     }
 
-    /**
-     * @return the seatCategory
-     */
-    public String getSeatCategory() {
-        return seatCategory;
-    }
-
-    /**
-     * @param seatCategory the seatCategory to set
-     */
-    public void setSeatCategory(String seatCategory) {
-        this.seatCategory = seatCategory;
-    }
-
-    /**
-     * @return the seatAvailability
-     */
-    public ArrayList<Integer> getSeatAvailability() {
-        return seatAvailability;
-    }
-
-    /**
-     * @param seatAvailability the seatAvailability to set
-     */
-    public void setSeatAvailability(ArrayList<Integer> seatAvailability) {
-        this.seatAvailability = seatAvailability;
-    }
 
     /**
      * @return the Schedule
@@ -93,6 +69,12 @@ public Stadium(Integer _numSeats) {
     public void setSchedule(ArrayList<String> Schedule) {
         this.schedule = Schedule;
     }
+    public void printStadium() {
+        System.out.println("Stadium Name: "+stadiumName+" Number of Seats Available: "+ numSeats);
 
-    
+    }
+    // Replaces total seats withs seat availability (i.e. decreases total seats available)
+    public void buyTickets(int seatsBought, int sectionInput) {
+        seatsPerGame.set(sectionInput, totalSeats - seatsBought);
+    }
 }
