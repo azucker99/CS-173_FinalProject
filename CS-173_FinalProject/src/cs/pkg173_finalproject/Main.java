@@ -37,7 +37,7 @@ public class Main {
         Citizens.section.add("Section 3");
         Citizens.pricePerSection.add(200);
 
-        // Citizens Schedule and giving each game a unique amount of seats
+        // Citizens Schedule and giving each game a unique amount of seats per section
         Citizens.schedule = new ArrayList<String>();
         Citizens.schedule.add("Game 1: May 18 - Marlins @ Phillies");
         Citizens.seatsPerGame.add(Citizens.totalSeats);
@@ -61,7 +61,7 @@ public class Main {
         Wells.section.add("Section 3");
         Wells.pricePerSection.add(200);
 
-        // Wells Schedule and giving each game a unique amount of tickets
+        // Wells Schedule and giving each game a unique amount of tickets per section
         Wells.schedule.add("Game 1: May 8: Pistons @ Sixers");
         Wells.seatsPerGame.add(Wells.totalSeats);
         Wells.schedule.add("Game 2: May l4: Magic @ Sixers");
