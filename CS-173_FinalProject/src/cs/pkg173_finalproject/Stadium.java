@@ -11,13 +11,13 @@ import java.util.ArrayList;
  * @author azuck
  */
 public class Stadium {
-    public int numSeats; // Number of seats bought
+    private int numSeats; // Number of seats bought
     public ArrayList<String> section; // Seat level (e.g. nosbleeds, etc.) 
     public ArrayList<String> schedule; // Event schedule for particular stadium 
-    public String stadiumName; // Name of the stadium
-    public int totalSeats; // Max number of seats available 
-    public ArrayList<Integer> seatsPerGame; // Total seats - seats bought 
-    public ArrayList<Integer> pricePerSection; // Section price
+    private String stadiumName; // Name of the stadium
+    private int totalSeats; // Max number of seats available 
+    private ArrayList<Integer> seatsPerGame; // Total seats - seats bought 
+    private ArrayList<Integer> pricePerSection; // Section price
     
 public Stadium(Integer _totalSeats, String _stadiumName) {
     this.totalSeats = _totalSeats;
@@ -37,12 +37,20 @@ public Stadium(Integer _totalSeats, String _stadiumName) {
     public int getNumSeats() {
         return numSeats;
     }
+    
+    public int getTotalSeats() {
+        return totalSeats;
+    }
 
     /**
      * @return the section
      */
     public ArrayList<String> getSection() {
         return section;
+    }
+    
+    public ArrayList<Integer> getPricePerSection() {
+        return pricePerSection;
     }
 
     /**
@@ -58,6 +66,10 @@ public Stadium(Integer _totalSeats, String _stadiumName) {
      */
     public ArrayList<String> getSchedule() {
         return schedule;
+    }
+    
+    public ArrayList<Integer> getSeatsPerGame() {
+        return seatsPerGame;
     }
 
     /**
