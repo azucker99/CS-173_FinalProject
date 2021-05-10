@@ -129,7 +129,7 @@ public class Main {
             sectionOfChoice = ofChoice.section.get(sectionInput - 1);
             System.out.println(sectionOfChoice);
         } else {
-            System.out.println("Please choose a section > 0 or < " + ofChoice.section.size() + 1);
+            System.out.println("Please choose a section > 0 or < " + (ofChoice.section.size() + 1));
         }
         
         // Selecting how many tickets you want 
@@ -138,9 +138,25 @@ public class Main {
         ofChoice.buyTickets(seats, sectionInput - 1 ); // ofStadium object calls buyTickets method to subtract number
         // of tickets from total tickets for that game
         
+        // Calculates and prints the total cost for the buyer
+        if (sectionInput == 1) {
+            int cost = seats * 100;
+            System.out.println("Your total cost for the " + gameOfChoice + " is " + "$" + cost + ".00.");
+            System.out.println("Enjoy the game!");
+        } else if (sectionInput == 2) {
+            int cost = seats * 150;
+            System.out.println("Your total cost for the " + gameOfChoice + " is " + "$" + cost + ".00.");
+            System.out.println("Enjoy the game!");
+        } else if (sectionInput == 3){
+            int cost = seats * 200;
+            System.out.println("Your total cost for the " + gameOfChoice + " is " + "$" + cost + ".00.");
+            System.out.println("Enjoy the game!");
+        }
+         
+        
         // Prints out the new amount for total tickets that the stadium has
-        for ( int i : ofChoice.seatsPerGame) {
-            System.out.println(i);
+        for (int i : ofChoice.seatsPerGame) {
+            System.out.println("There are " + i + " remaining tickets for " + gameOfChoice + ".");
         }
                 
 
