@@ -20,12 +20,13 @@ public class MainTest {
     @Test
     public void testSection1() {
         System.out.println("computeCost");
-        int sectionInput = 3;
+        int sectionInput = 1;
         int seats = 5;
         int expResult = 500;
         int result = Main.computeCost(sectionInput, seats);
         assertEquals(expResult, result);
     }
+    @Test
      public void testSection2() {
         System.out.println("computeCost");
         int sectionInput = 2;
@@ -34,9 +35,10 @@ public class MainTest {
         int result = Main.computeCost(sectionInput, seats);
         assertEquals(expResult, result);
     }
+     @Test
      public void testSection3() {
         System.out.println("computeCost");
-        int sectionInput = 1;
+        int sectionInput = 3;
         int seats = 5;
         int expResult = 1000;
         int result = Main.computeCost(sectionInput, seats);
