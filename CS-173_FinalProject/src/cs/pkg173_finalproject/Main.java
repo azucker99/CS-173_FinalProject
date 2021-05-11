@@ -14,6 +14,22 @@ import java.util.ArrayList;
  */
 public class Main {
 
+    
+    // Function to compute cost of tickets
+    public static int computeCost(int sectionInput, int seats) {
+        String  gameOfChoice = null;
+        int cost = 0;
+        if (sectionInput == 1) {
+            cost = seats * 100;
+        } else if (sectionInput == 2) {
+            cost = seats * 150;
+        } else if (sectionInput == 3){
+            cost = seats * 200;
+        }
+        return cost;
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -147,27 +163,13 @@ public class Main {
         
         // Prints out the new amount for total tickets that the stadium has
         for (int i : ofChoice.getSeatsPerGame()) {
-            for (String j : ofChoice.getSchedule()) {
-                    System.out.println("There are " + i + " remaining tickets for " + j + ".");
-            }
+                    System.out.println("There are " + i + " remaining tickets for " + gameOfChoice + ".");
         }
                 
 
     }
     
-    // Function to compute cost of tickets
-    public static int computeCost(int sectionInput, int seats) {
-        String  gameOfChoice = null;
-        int cost = 0;
-        if (sectionInput == 1) {
-            cost = seats * 100;
-        } else if (sectionInput == 2) {
-            cost = seats * 150;
-        } else if (sectionInput == 3){
-            cost = seats * 200;
-        }
-        return cost;
-    }
+    
        
     
 }
