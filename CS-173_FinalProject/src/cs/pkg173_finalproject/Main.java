@@ -14,22 +14,20 @@ import java.util.ArrayList;
  */
 public class Main {
 
-    
     // Function to compute cost of tickets
     public static int computeCost(int sectionInput, int seats) {
-        String  gameOfChoice = null;
+        String gameOfChoice = null;
         int cost = 0;
         if (sectionInput == 1) {
             cost = seats * 100;
         } else if (sectionInput == 2) {
             cost = seats * 150;
-        } else if (sectionInput == 3){
+        } else if (sectionInput == 3) {
             cost = seats * 200;
         }
         return cost;
     }
-    
-    
+
     /**
      * @param args the command line arguments
      */
@@ -101,11 +99,11 @@ public class Main {
             System.out.println("Invalid Input.");
         }
         Stadium ofChoice = null; // New stadium object which user will designate their choice
-        if (input > 0 && input < stadiums.size() + 1) {
+        if (input > 0 && input < (stadiums.size() + 1)) {
             ofChoice = stadiums.get(input - 1); // Stadium ofChoice is the option the user chooses 
             ofChoice.printStadium(); // Prints out stadium ofChoice
         } else {
-            System.out.println("Please choose a stadium > 0 or < " + stadiums.size() + 1);
+            System.out.println("Please choose a stadium > 0 or < " + (stadiums.size() + 1));
         }
 
         // Choosing a game
@@ -113,7 +111,7 @@ public class Main {
         // Prints out schedule for designated stadium 
         for (int i = 0; i < ofChoice.schedule.size(); i++) {
             System.out.print((i + 1) + " ");
-       
+
             System.out.println(ofChoice.schedule.get(i));
         }
         String game = scanner.nextLine(); // Person puts in numerical choice for game
@@ -123,19 +121,19 @@ public class Main {
         } catch (Exception e) {
             System.out.println("Invalid Input.");
         }
-        String  gameOfChoice = null; // Initialzing a gameOfChoice object
+        String gameOfChoice = null; // Initialzing a gameOfChoice object
         if (input > 0 && input <= ofChoice.schedule.size()) {
             gameOfChoice = ofChoice.schedule.get(input - 1); // gameOfChoice is the option the user chooses
             System.out.println(gameOfChoice); // Prints the game the user chooses
         } else {
             System.out.println("Please choose a game > 0 or < " + ofChoice.schedule.size() + 1);
         }
-        
+
         // Choosing a section 
         System.out.println("Please choose a seat section:");
         for (int i = 0; i < ofChoice.section.size(); i++) {
             System.out.print((i + 1) + " ");
-       
+
             System.out.println(ofChoice.section.get(i) + " " + ofChoice.getPricePerSection().get(i));
         }
         int sectionInput = scanner.nextInt(); // User chooses section
@@ -147,29 +145,23 @@ public class Main {
         } else {
             System.out.println("Please choose a section > 0 or < " + (ofChoice.section.size() + 1));
         }
-        
+
         // Selecting how many tickets you want 
         System.out.println("Please select how many tickets you would like:");
         int seats = scanner.nextInt();
-        ofChoice.buyTickets(seats, sectionInput - 1 ); // ofStadium object calls buyTickets method to subtract number
+        ofChoice.buyTickets(seats, sectionInput - 1); // ofStadium object calls buyTickets method to subtract number
         // of tickets from total tickets for that game
-         
-        
+
         // Calculates and prints the total cost for the buyer
         int cost = computeCost(sectionInput, seats);
         System.out.println("Your total cost for the " + gameOfChoice + " is " + "$" + cost + ".00.");
         System.out.println("Enjoy the game!");
-            
-        
-        // Prints out the new amount for total tickets that the stadium has
-        for (int i : ofChoice.getSeatsPerGame()) {
-                    System.out.println("There are " + i + " remaining tickets for " + gameOfChoice + ".");
-        }
-                
 
+       /* // Prints out the new amount for total tickets that the stadium has
+        for (int i : ofChoice.getSeatsPerGame()) {
+            System.out.println("There are " + i + " remaining tickets for " + gameOfChoice + ".");
+        }
+            */
     }
-    
-    
-       
-    
+
 }
